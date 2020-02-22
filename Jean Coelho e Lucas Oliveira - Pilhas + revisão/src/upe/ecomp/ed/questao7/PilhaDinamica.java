@@ -7,8 +7,10 @@ public class PilhaDinamica<T> implements TADPilha<T> {
 	private int qtd;
 
 	public void push(T e) {
+		if(e != null) {
 		dados.inserir(e);
 		qtd++;
+		}
 	}
 
 	public T pop() {
@@ -41,9 +43,9 @@ public class PilhaDinamica<T> implements TADPilha<T> {
 		boolean flag = false;
 		dados.inverter();
 		if(dados.getInicio() == null) {
-			dados.inverter();
 			flag = true;
 		}
+		dados.inverter();
 		return  flag;
 	}
 
